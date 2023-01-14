@@ -22,7 +22,7 @@
                 <label for="register_firstName">
                     <svg class="icon">
                         <use xlink:href="#icon-user"></use>
-                      </svg><span class="hidden">First Name</span>
+                    </svg><span class="hidden">First Name</span>
                 </label>
                 <input id="register_firstName" type="text" name="firstName" class="form__input" placeholder="First Name" required>
             </div>
@@ -31,7 +31,7 @@
                 <label for="register_lastName">
                     <svg class="icon">
                         <use xlink:href="#icon-user"></use>
-                      </svg><span class="hidden">Last Name</span>
+                    </svg><span class="hidden">Last Name</span>
                 </label>
                 <input id="register_lastName" type="text" name="lastName" class="form__input" placeholder="Last Name" required>
             </div>
@@ -40,7 +40,7 @@
                 <label for="register_username">
                     <svg class="icon">
                         <use xlink:href="#icon-user"></use>
-                      </svg><span class="hidden">Username</span>
+                    </svg><span class="hidden">Username</span>
                 </label>
                 <input id="login_username" type="text" name="username" class="form__input" placeholder="Username" required>
             </div>
@@ -52,23 +52,30 @@
                 <input id="login__username" type="email" name="email" class="form__input" placeholder="Email" required>
             </div>
         
-            <div class="form__field">
+            <div class="form__field" ng-if="myVar">
+                <label for="login__password">
+                    <svg class="icon">
+                        <use xlink:href="#icon-lock"></use>
+                    </svg><span class="hidden">Password</span>
+                </label>
+                <input ng-hide="toShow" id="password" type="password" name="password" class="form__input" placeholder="Password" required>
+            </div>
+            <div>
+                <input type="checkbox" onclick="myFunction1()">Show Password
+            </div>
+
+            <div class="form__field" ng-if="myVar">
                 <label for="login__password">
                     <svg class="icon">
                         <use xlink:href="#icon-lock"></use>
                       </svg><span class="hidden">Password</span>
                 </label>
-                <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+                <input ng-hide="toShow" id="confirm_password" type="password" name="password" class="form__input" placeholder="Confirm Password" required>
             </div>
-            <div class="form__field">
-                <label for="login__password">
-                    <svg class="icon">
-                        <use xlink:href="#icon-lock"></use>
-                      </svg><span class="hidden">Password</span>
-                </label>
-                <input id="confirm__password" type="password" name="password" class="form__input" placeholder="Confirm Password" required>
+            <div>
+                <input type="checkbox" onclick="myFunction2()">Show Password
             </div>
-        
+
             <div class="form__field">
                 <input type="submit" value="Create Account">
             </div>
@@ -93,5 +100,6 @@
         </symbol>
       </svg>
     
+      <script src="js/angular.js"></script>
 </body>
 </html>
